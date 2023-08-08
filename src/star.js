@@ -15,8 +15,7 @@ export default class Star {
         this.num = document.createElement('span');
         this.num.classList.add('num');         
     }
-    hitTest(isFiring, aimPositionX, aimPositionY) {
-        
+    hitTest(isFiring, aimPositionX, aimPositionY) {        
         // console.log('hitX--' + aimPositionX, 'HitY--' + aimPositionY)
         if(isFiring) {
             if(this.is) {
@@ -46,8 +45,7 @@ export default class Star {
         this.x = this.random(0, 2);		
 		this.y = this.random(0, 2);
 
-        console.log(this.x, this.y)
-
+        // console.log(this.x, this.y)
         const targetElement = document.querySelector(`td[data-x="${this.x}"][data-y="${this.y}"]`);
         targetElement.children[0].classList.add('star--active');
         
@@ -87,7 +85,7 @@ export default class Star {
 
         } 
         catch {
-            console.log(345);
+            console.log('error');
         }           
     }    
 }

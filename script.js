@@ -19,7 +19,6 @@ window.addEventListener('load', ()=> {
 game.init();
 game.start();
 
-
 console.log(game)
 
 

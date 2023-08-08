@@ -7,6 +7,5 @@ export default class Info {
             <p><span> ENTER </span> для выстрела</p>
         `;
         document.querySelector('.container').append(info);
-
     }
 }

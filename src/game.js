@@ -32,8 +32,7 @@ export default class Game {
                 case 'ArrowDown':
                 case 'ArrowLeft':
                 case 'Enter':               
-                    this.activeKeys.delete(event.code);                    
-                    
+                    this.activeKeys.delete(event.code);
             }
         })
         this.star.render();
