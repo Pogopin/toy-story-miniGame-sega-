@@ -14,38 +14,17 @@ export default class Star {
 
         this.num = document.createElement('span');
         this.num.classList.add('num');         
-    }
-    hitTest(isFiring, aimPositionX, aimPositionY) {        
-        // console.log('hitX--' + aimPositionX, 'HitY--' + aimPositionY)
-        if(isFiring) {
-            if(this.is) {
-                if(aimPositionX == this.x && aimPositionY == this.y) {
-                    console.log('HIT!!!!!!!!!!!!!');                
-                    clearTimeout(this.tr);
-                    clearTimeout(this.tr2);
-                    this.contentStar = 5;
-        
-                    document.querySelector('.star--active').classList.remove('star--active');
-                    this.num.remove();
-                    this.is = false;
-                    setTimeout(() => this.render(), 1500);                      
-                    return;
-                    
-                }
-            }
-        }        
-    }
+    }    
     random(min,max){
 		min = Math.ceil(min);
 		max = Math.floor(max);
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
-    render() {
+    render() {        
         this.is = true;
         this.x = this.random(0, 2);		
 		this.y = this.random(0, 2);
 
-        // console.log(this.x, this.y)
         const targetElement = document.querySelector(`td[data-x="${this.x}"][data-y="${this.y}"]`);
         targetElement.children[0].classList.add('star--active');
         
@@ -59,7 +38,7 @@ export default class Star {
             return;
         }    
         this.starsCounter ++;
-        // totalStars --;        
+        this.totalStars --;        
         
         this.starsTimer (targetElement, this.timer);        
     }    
@@ -81,8 +60,7 @@ export default class Star {
             this.contentStar --;
                 
             this.tr = setTimeout(() => this.num.remove(), timer);        
-            this.tr2 = setTimeout(() => this.starsTimer(targetElement, timer), timer);   
-
+            this.tr2 = setTimeout(() => this.starsTimer(targetElement, timer), timer);
         } 
         catch {
             console.log('error');

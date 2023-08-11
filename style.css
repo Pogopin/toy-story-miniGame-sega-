@@ -61,3 +61,12 @@ td {
 .info span {
     color: green;
 }
+.lifeInfo {
+    max-width: 803px;
+    margin: 0 auto;
+    background-color: rgb(221, 231, 243);
+}
+.lifeInfo span {
+    color: red;
+    font-size: 40px;
+}
