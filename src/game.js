@@ -36,12 +36,12 @@ export default class Game {
                     this.activeKeys.delete(event.code);
             }
         })
-        // this.star.render();
+        this.star.render();
     }
     hitTest(isFiring, aimPositionX, aimPositionY) {        
         // console.log('hitX--' + aimPositionX, 'HitY--' + aimPositionY)
         if(isFiring) {
-            if(this.star.is) {
+            if(this.star.is) {// переменная нужна чтобы метод отрабатывал 1 раз
                 if(aimPositionX == this.star.x && aimPositionY == this.star.y) {
                     console.log('HIT!!!!!!!!!!!!!');                
                     clearTimeout(this.star.tr);
@@ -64,8 +64,7 @@ export default class Game {
     loop() {
         // console.log('loop');
         this.aim.update(this.activeKeys);
-        this.life.update(this.star.totalStars);
-        // this.star.hitTest(this.aim.isFiring, this.aim.hitPositionX, this.aim.hitPositionY);
+        this.life.update(this.star.totalStars);        
         this.hitTest(this.aim.isFiring, this.aim.hitPositionX, this.aim.hitPositionY);
 
         requestAnimationFrame(this.loop);

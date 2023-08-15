@@ -18,7 +18,7 @@ export default class Aim {
     
         if(keys.has('ArrowUp')) {
             this.positionX = 0;            
-            this.image.style.top = -5 + '%';            
+            this.image.style.top = -2 + '%';            
         } 
         if(keys.has('ArrowRight')) {
             this.positionY = 2;
@@ -26,7 +26,7 @@ export default class Aim {
         } 
         if(keys.has('ArrowDown')) {
             this.positionX = 2;
-            this.image.style.top = 55 + '%';                 
+            this.image.style.top = 52 + '%';                 
         } 
         if(keys.has('ArrowLeft')) {
             this.positionY = 0;
