@@ -36,7 +36,7 @@ export default class Game {
                     this.activeKeys.delete(event.code);
             }
         })
-        // this.star.render();
+        this.star.render();
     }
     hitTest(isFiring, aimPositionX, aimPositionY) {        
         // console.log('hitX--' + aimPositionX, 'HitY--' + aimPositionY)
