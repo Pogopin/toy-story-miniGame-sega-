@@ -1,16 +1,32 @@
 export default class LifeInfo {
-    heart = 3;
-
+    heart;
+    total = 5;
     constructor() {        
         this.lifePanel = document.createElement('div');
         this.lifePanel.classList.add('lifeInfo');        
-        document.querySelector('.container').append(this.lifePanel);
+        this.image = document.createElement('img');
+        this.image.src = './assets/free.png';
+
+        this.lifePanel.innerHTML =`            
+            <p>Осталось звезд:<span>${this.total}</span></p>
+            <div class="life">                
+                <img class="life__img" src="${this.image.src}" alt="">
+                <img class="life__img" src="${this.image.src}" alt="">
+                <img class="life__img" src="${this.image.src}" alt="">                
+            </div>   
+        `;        
+        document.querySelector('.container').append(this.lifePanel);        
+    }
+    update(totalStars, life) {                         
+        this.total = totalStars;
+        this.heart = life;        
+        document.querySelector('.lifeInfo > p > span').innerHTML = totalStars;   
+        this.removeHearts();
     }
 
-    update(totalStars) {        
-        this.lifePanel.innerHTML =`
-            <p>Осталось звезд:<span>    ${totalStars}</span></p>
-            
-        `;
+    removeHearts() {
+        // console.log('life', this.heart);
+        const lifeImg = document.querySelectorAll('.life__img');        
+        if(lifeImg[this.heart + 1]) lifeImg[this.heart + 1].remove();        
     }
 }

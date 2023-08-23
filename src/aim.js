@@ -18,7 +18,7 @@ export default class Aim {
     
         if(keys.has('ArrowUp')) {
             this.positionX = 0;            
-            this.image.style.top = -2 + '%';            
+            this.image.style.top = -1 + '%';            
         } 
         if(keys.has('ArrowRight')) {
             this.positionY = 2;
@@ -26,7 +26,7 @@ export default class Aim {
         } 
         if(keys.has('ArrowDown')) {
             this.positionX = 2;
-            this.image.style.top = 52 + '%';                 
+            this.image.style.top = 51 + '%';                 
         } 
         if(keys.has('ArrowLeft')) {
             this.positionY = 0;
@@ -36,7 +36,7 @@ export default class Aim {
             this.isFiring = true;    
             this.hitPositionX = this.positionX;
             this.hitPositionY = this.positionY;
-            console.log('X= ', this.hitPositionX, 'Y= ', this.hitPositionY); 
+            // console.log('X= ', this.hitPositionX, 'Y= ', this.hitPositionY); 
         }        
         if(keys.size === 0) {
             this.isFiring = false;

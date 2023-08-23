@@ -1,5 +1,5 @@
 export default class Star {
-
+    life = 2;//количество жизней
     contentStar = 5;
     starsCounter = 0;
     totalStars = 5;
@@ -20,7 +20,9 @@ export default class Star {
 		max = Math.floor(max);
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
-    render() {        
+    render() {                     
+        if(this.life < 0) return //выход из рекурсии - нет жизней
+
         this.is = true;
         this.x = this.random(0, 2);		
 		this.y = this.random(0, 2);
@@ -45,8 +47,9 @@ export default class Star {
 
     starsTimer (targetElement, timer) {       
         try{
-            if(this.contentStar < 0) {
-    
+            if(this.contentStar < 0) {                
+                this.life -= 1;// счетчик жизней, уменьшается, если игрок не успел выстрелись и таймер звезды закончился!
+
                 this.contentStar = 5;                    
                 document.querySelector('.star--active').classList.remove('star--active');
                 this.num.remove();                  

@@ -30,7 +30,7 @@ td {
     left: 50%;
     width: 200px;
     height: 200px;
-    transform: translate(-50%, 29%);
+    transform: translate(-50%, 26%);
 }
 .star {
     width: 100%;
@@ -65,8 +65,22 @@ td {
     max-width: 803px;
     margin: 0 auto;
     background-color: rgb(221, 231, 243);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 }
 .lifeInfo span {
     color: red;
     font-size: 40px;
+}
+.life {
+    display: flex;    
+    justify-content: end;
+    width: 50px;
+}
+
+.life img {
+    width: 100%;
+    height: 50px;
 }

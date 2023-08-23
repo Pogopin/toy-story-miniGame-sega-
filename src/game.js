@@ -11,7 +11,6 @@ export default class Game {
     }
     async init() {
         //get input        
-        
         document.addEventListener('keydown', (event)=> {
             event.preventDefault();    
             // console.log(event.code)
@@ -62,10 +61,19 @@ export default class Game {
         requestAnimationFrame(this.loop);
     }
     loop() {
-        // console.log('loop');
-        this.aim.update(this.activeKeys);
-        this.life.update(this.star.totalStars);        
-        this.hitTest(this.aim.isFiring, this.aim.hitPositionX, this.aim.hitPositionY);
+        // console.log('loop');        
+        this.aim.update(this.activeKeys);        
+        if(this.star.life >= 0) {
+            this.life.update(this.star.totalStars, this.star.life);        
+            this.hitTest(this.aim.isFiring, this.aim.hitPositionX, this.aim.hitPositionY);
+        }
+        else {
+            console.log('game over')      
+            document.querySelector('.life__img').remove();
+            clearTimeout(this.star.tr);
+            clearTimeout(this.star.tr2);
+            return;
+        }
 
         requestAnimationFrame(this.loop);
     }
