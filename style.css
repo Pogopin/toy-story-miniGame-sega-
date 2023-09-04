@@ -84,3 +84,31 @@ td {
     width: 100%;
     height: 50px;
 }
+.btn-start-game, .btn-again-game {    
+    padding: 20px 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 9;
+    cursor: pointer;
+    font-size: 20px;
+    transform: translate(-50%, -80%);
+}
+.game-over-info, .game-success-info {
+    padding: 23px 100px;   
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 11;   
+    font-size: 20px;
+    transform: translate(-50%, -80%);
+}
+.game-over-info {
+    background-color: rgb(241, 180, 180);
+}
+.game-success-info {
+    background-color: rgb(156, 235, 156);
+}
+.none {
+    display: none;
+}

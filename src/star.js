@@ -1,8 +1,9 @@
+import { gameSuccessTable } from './constants.js';
 export default class Star {
     life = 2;//количество жизней
     contentStar = 5;
     starsCounter = 0;
-    totalStars = 5;
+    totalStars = 20;
     timer = 1100;
     tr;
     tr2;
@@ -32,11 +33,14 @@ export default class Star {
         
         this.timer = this.timer - 50;    
 
-        if(this.starsCounter === 5) {
+        if(this.starsCounter === 20) {
 
             this.starsCounter = 0;            
             document.querySelector('.star--active').classList.remove('star--active');
             this.num.remove();
+
+            gameSuccessTable.classList.remove('none');
+            // console.log('выйграл')
             return;
         }    
         this.starsCounter ++;

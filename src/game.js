@@ -1,3 +1,5 @@
+import { gameOverTable } from './constants.js'
+
 export default class Game {
     constructor({ map, aim, star, info, life }) {
         this.map = map;
@@ -67,9 +69,11 @@ export default class Game {
             this.life.update(this.star.totalStars, this.star.life);        
             this.hitTest(this.aim.isFiring, this.aim.hitPositionX, this.aim.hitPositionY);
         }
-        else {
-            console.log('game over')      
-            document.querySelector('.life__img').remove();
+        else {            
+            console.log('game over');
+            gameOverTable.classList.remove('none');
+
+            document.querySelector('.life__img').remove();            
             clearTimeout(this.star.tr);
             clearTimeout(this.star.tr2);
             return;

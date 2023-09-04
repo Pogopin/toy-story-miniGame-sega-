@@ -1,6 +1,6 @@
 export default class LifeInfo {
     heart;
-    total = 5;
+    total = 20;
     constructor() {        
         this.lifePanel = document.createElement('div');
         this.lifePanel.classList.add('lifeInfo');        

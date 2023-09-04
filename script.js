@@ -5,6 +5,8 @@ import Star from './src/star.js';
 import Info from './src/info.js';
 import LifeInfo from './src/lifeInfo.js';
 
+import { startBtn } from './src/constants.js';
+
 const game = new Game({
     info: new Info(),
     map: new Map(),
@@ -13,15 +15,16 @@ const game = new Game({
     life: new LifeInfo()
     
 })
-
 window.addEventListener('load', ()=> {    
     const cont = document.querySelector('.container');
     cont.append(game.aim.image);    
 })
-game.init();
-game.start();
-
-console.log(game)
+startBtn.addEventListener('click', (event)=> {    
+    game.init();
+    game.start();
+    startBtn.classList.add('none');
+});
+// console.log(game)
 
 
 
